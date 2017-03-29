@@ -1,25 +1,21 @@
-import api_key,requests
+from nltk.corpus import wordnet
 
-def make_thesaurus_api_call(word):
-    url = "http://thesaurus.altervista.org/thesaurus/v1?word="+word+"&language=en_US&key="+api_key.API_KEY+"&output=json"
-    return requests.get(url)
+def get_meaning(word):
+    syns = wordnet.synsets(word)
+    return [syns[0].definition()]
 
-def get_thesaurus_detail(word):
-    response = make_thesaurus_api_call(word)
-    print response.json
-    response = response.json()["response"][0]["list"]
-    return response["synonyms"].split("|")[0],response["category"]
 
-def get_synonym(word):
-    try:
-        synonym,POS = get_thesaurus_detail(word)
-        return {"synonym":synonym}
-    except KeyError:
-        return {"synonym":None}
+def get_synonyms(word):
+    synonyms = []
+    for syn in wordnet.synsets(word):
+        for l in syn.lemmas():
+            synonyms.append(l.name())
+    return synonyms
 
-def get_category(word):
-    try:
-        synonym,POS = get_thesaurus_detail(word)
-        return {"POS":POS}
-    except KeyError:
-        return {"POS":None}
+def get_antonym(word):
+    antonyms = []
+    for syn in wordnet.synsets(word):
+        for l in syn.lemmas():
+            if l.antonyms():
+                antonyms.append(l.antonyms()[0].name())
+    return list(set(antonyms))
