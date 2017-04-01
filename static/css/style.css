@@ -532,97 +532,22 @@ pre{
   padding: unset;
   border-radius:unset;
 }
-#modal-backdrop{
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0,0,0,0.53);
-  z-index: 10000;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+.chat_window{
+	margin-left: 50%;
+	height: calc(100vh - 90px);
 }
-#modal{
-    border-radius: 4px;
-    background: white;
-    width: 500px;
-    margin: auto;
-    top: 100px;
-    position: relative;
-    color: #757575;
-    overflow: hidden;
+.messages{
+	height: calc(100vh - 250px);
+}
+.messages .message.left .text {
+    color: black !important;
+    font-weight: inherit;
+}
+.messages .message.right .text {
+    color: black !important;
+    font-weight: inherit;
+}
 
+#msg_input{
+    color: black;
 }
-#modal-header{
-    min-height: 20px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 100;
-    border-bottom: 1px solid lightgray;
-    padding: 12px;
-    /*text-shadow: 1px 1px 1px rgba(114, 119, 112, 0.8);*/
-}
-#modal-body{
-  min-height: 20px;
-  width: 100%;
-  padding: 5px;
-  overflow: hidden
-}
-#modal-footer{
-  min-height: 20px;
-  width: 100%;
-  border-top: 1px solid lightgray;
-  padding: 5px;
-}
-#modal-footer #next{
-    cursor: unset;
-    color: white;
-    background-color: #4CAF50;
-    float: right;
-    margin: 5px;
-    margin-right: 8px;
-    border: unset;
-    padding: 6px;
-    border-radius: 1px;
-}
-#modal-footer #next:hover{
-    background-color: #ffffff;
-    color: #4CAF50;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-#modal-footer #skip{
-    cursor: unset;
-    color: white;
-    background-color: #FF622C;
-    float: right;
-    margin: 5px;
-    margin-right: 8px;
-    border: unset;
-    padding: 6px;
-    border-radius: 1px;
-}
-#modal-footer #skip:hover{
-    background-color: white;
-    color: #FF622C;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-.skip:disabled {
-    box-shadow: unset;
-    cursor: unset;
-    color: lightgrey !important;
-    background-color: #f6f6f6 !important;
-}
-.test-text {
-    background-color: white;
-    margin-left: 40px;
-    margin-right: 479px;
-    min-height: 58px;
-  
-}
-#modal-body div { 
-float: left; 
-width: 166px; 
-display: inline-block;
-/* possibly also height: 300px; */ 
-}
-#modal-body div p span { 
-font-family: serif;}

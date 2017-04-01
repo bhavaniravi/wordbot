@@ -2,8 +2,11 @@ from nltk.corpus import wordnet
 
 def get_meaning(word):
     syns = wordnet.synsets(word)
-    return [syns[0].definition()]
-
+    try:
+        return [syns[0].definition()]
+    except IndexError:
+        return []
+    
 
 def get_synonyms(word):
     synonyms = []

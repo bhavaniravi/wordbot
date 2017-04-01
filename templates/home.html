@@ -9,16 +9,12 @@
 
 {% block content %}
 <br/>
-<input id="interview_type" type="hidden" value="{{ interview_type }}">
-<input id="organization" type="hidden" value="{{ organization }}">
-<input id="date" type="hidden" value="{{ date }}">
-<input id="interview_id" type="hidden" value="{{ interview_id }}">
 <div class="row">
     <div class="col-sm-6">
         <div class="row">
             <div class="chat_window">
                 <div class="top_menu">
-                    <div class="title">Sitebot</div>
+                    <div class="title">Wordbot</div>
                 </div>
                 <ul class="messages"></ul>
                 <div class="bottom_wrapper clearfix">
@@ -48,16 +44,4 @@
 
 {% block other_footers %}
 <script src="{{ url_for('static', filename="js/bind.js") }}"></script>
-
-<style>
-.ace-github .ace_gutter {
-    background: white;
-}
-.header_container{
-    padding-left: 0px;
-}
-.header_div{
-    padding-left: 0px;
-}
-</style>
 {% endblock %}
