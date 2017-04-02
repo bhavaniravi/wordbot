@@ -17,8 +17,8 @@ This application is built using python2.You need python 2 to be installed in you
 
 2.  To download nltk wordnet corpora  
     open python shell  
-    `import nltk 
-     nltk.download()`  
+    `import nltk`
+    `nltk.download()`  
     download `wordnet` under corpora tab
 
 3.  To run the application run  
