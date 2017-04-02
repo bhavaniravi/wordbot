@@ -13,7 +13,7 @@ It used python nltk wordnet corpous to get meaning synonym and antonym of words
 This application is built using python2.You need python 2 to be installed in your system.
 
 1.  Install all required packages  
-    `pip install requirement.txt`
+    `pip install -r requirement.txt`
 
 2.  To download nltk wordnet corpora  
     open python shell  
