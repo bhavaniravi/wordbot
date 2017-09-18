@@ -17,7 +17,7 @@ def format_message(action,reply_message,outcome):
     except IndexError:
         reply_message = "Oops !! That is not a proper word I couldn't find anything about it in the Dictionary"
     return reply_message
-    
+
 def get_intent_action_entity(response):
     """
     given apiai response returns intent,entity,action
@@ -57,4 +57,5 @@ def send_message(message):
     request.query = message
     response = request.getresponse()
     raw_response = response.read()
+    print raw_response
     return json.loads(raw_response)

@@ -12,7 +12,7 @@ def hello():
     Sample flask hello world
     """
     return render_template('home.html')
-    
+
 
 @app.route('/chat',methods=["POST"])
 def chat():
@@ -21,6 +21,7 @@ def chat():
     and constructs response from response.py
     """
     message = request.form["text"]
+    print message
     response = send_message(message)
     if response["status"]["code"] == 200:
         reply_message = response["result"]["fulfillment"]["speech"]
