@@ -8,7 +8,7 @@ def processRequest(req):
             intent,action,entitiy = get_intent_action_entity(response)
         except KeyError:
             pass
-        print intent,entitiy,action
+        print (intent,entitiy,action)
         if action:
             try:
                 methodToCall = getattr(action_methods,action)
@@ -31,6 +31,6 @@ def webhook():
     res = processRequest(req)
     res = json.dumps(res, indent=4)
     r = make_response(res)
-    print res
+    print (res)
     r.headers['Content-Type'] = 'application/json'
     return r

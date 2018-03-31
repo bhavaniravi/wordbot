@@ -43,7 +43,7 @@ def get_intent_action_entity(response):
                     entitiy = context["parameters"]['word']
                     break
         except KeyError as e:
-            print e
+            print (e)
             entitiy = None
     return intent,action,entitiy
 
@@ -56,6 +56,5 @@ def send_message(message):
     request.session_id = SESSION_ID
     request.query = message
     response = request.getresponse()
-    raw_response = response.read()
-    print raw_response
+    raw_response = response.read().decode("utf-8")
     return json.loads(raw_response)

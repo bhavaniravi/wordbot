@@ -21,7 +21,7 @@ def chat():
     and constructs response from response.py
     """
     message = request.form["text"]
-    print message
+    print (message)
     response = send_message(message)
     if response["status"]["code"] == 200:
         reply_message = response["result"]["fulfillment"]["speech"]
@@ -29,7 +29,7 @@ def chat():
             intent,action,entitiy = get_intent_action_entity(response)
         except KeyError:
             pass
-        print intent,entitiy,action
+        print (intent,entitiy,action)
         if action:
             try:
                 methodToCall = getattr(action_methods,action)
@@ -37,7 +37,7 @@ def chat():
                 reply_message = format_message(action,reply_message,outcome)
             except AttributeError:
                 pass
-        print reply_message
+        print (reply_message)
         return jsonify({"status":"success","response":reply_message})
 
 app.config["DEBUG"] = True
